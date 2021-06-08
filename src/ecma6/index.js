@@ -76,3 +76,66 @@ console.log(eduaction);
 
 console.log(globalVar);
 
+//Parámetros en objetos antes
+
+let name = 'carlos';
+let age = 26;
+
+obj = { name: name, age:age };
+
+//con ecmascript 6
+
+obj2 = { name, age};
+
+console.log(obj);
+console.log(obj2);
+
+//arrow function antes
+
+const names = [
+  {
+    name: 'felipe', age: 12
+  },
+  { name: 'juan', age: 80},
+]
+
+let listOfNames = names.map(function (item){
+  console.log(item.name);
+})
+
+//ahora con ecmascript 6
+
+let listOfNames2 = names.map(item => console.log(item.name));
+
+//otra manera
+
+const listOfNames3 = (name, age, country) => {
+  ... //código de la función
+}
+
+//otra manera
+const listOfNames4 = name => {
+  ... //bloque de código
+}
+
+//otra manera
+const square = num => num * num;
+
+
+//promesas
+const helloPromise = () => {//Asignamos una función, una arrow function
+  return new Promise ((resolve, reject) => { //retorna una promesa
+    if (true){
+      resolve('todo ok');
+    }else {
+      reject('Ups !!! algo salió mal');
+    }
+  });
+}
+
+//ejecutando la promesa
+helloPromise ()
+  .then(response => console.log(response))
+  .then(()=> console.log('hola'))
+  .catch(error => console.log(error));
+  
