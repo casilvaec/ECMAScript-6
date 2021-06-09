@@ -138,4 +138,42 @@ helloPromise ()
   .then(response => console.log(response))
   .then(()=> console.log('hola'))
   .catch(error => console.log(error));
-  
+
+
+//Clases
+class calculator {
+  constructor () {
+    this.valueA = 0;
+    this.valueB = 0;
+  }
+  suma(valueA, valueB){
+    this.valueA=valueA;
+    this.valueB=valueB;
+    return this.valueA + this.valueB;
+  }
+}
+
+//ejecutando la clase
+const calc = new calculator();
+console.log(calc.suma(5,6));
+
+//usando módulos
+import { hello } from './module';
+
+hello();
+
+
+//generadores
+function* helloWorld(){
+  if (true){
+    yield 'hello, ';
+  }
+  if (true){
+    yield 'world';
+  }
+};
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
